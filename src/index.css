@@ -1,0 +1,44 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.ui.grid{
+  width: 500px;
+}
+#mainbutton{
+  background-color: #2cb44d;
+  color: white;
+  height: 50px;
+  width: 100%;
+  font-weight: 900;
+}
+#mainbutton2{
+  color: black;
+  height: 50px;
+  width: 90%;
+  font-weight: 900;
+}
+#mainbutton:hover{
+  background-color: #2cb44d;
+  color: white;
+  height: 50px;
+  width: 100%;
+  font-weight: 900;
+  opacity: 0.7;
+}
+.panes{
+  height: 300px;
+}
+#radioQuestion2{
+  font-weight: 700;
+  font-size: 22px;
+}
