@@ -1,11 +1,19 @@
 import React, { useState } from "react";
 import { Button } from "semantic-ui-react";
 
-export default function Tab1() {
+export default function Tab1({ handleOptionChange }) {
   const [selectedButton, setSelectedButton] = useState(null);
 
   const handleButtonClick = (buttonId) => {
     setSelectedButton(buttonId);
+    handleOptionChange(buttonId);
+    if (buttonId === "Adresten alınıp teslim edilsin") {
+      handleOptionChange(buttonId, "350TL - 500TL");
+    } else if (buttonId === "Evde halı temizliği yapılsın") {
+      handleOptionChange(buttonId, "500TL - 750TL");
+    } else if (buttonId === "Ofiste halı temizliği yapılsın") {
+      handleOptionChange(buttonId, "800TL - 1000TL");
+    }
   };
 
   const isButtonSelected = (buttonId) => {
@@ -21,10 +29,14 @@ export default function Tab1() {
       <Button
         id="mainbutton2"
         style={{
-          background: isButtonSelected("button1") ? "green" : "",
-          color: isButtonSelected("button1") ? "white" : "",
+          background: isButtonSelected("Adresten alınıp teslim edilsin")
+            ? "green"
+            : "",
+          color: isButtonSelected("Adresten alınıp teslim edilsin")
+            ? "white"
+            : "",
         }}
-        onClick={() => handleButtonClick("button1")}
+        onClick={() => handleButtonClick("Adresten alınıp teslim edilsin")}
       >
         Adresten alınıp teslim edilsin
       </Button>
@@ -32,10 +44,16 @@ export default function Tab1() {
       <Button
         id="mainbutton2"
         style={{
-          background: isButtonSelected("button2") ? "green" : "",
-          color: isButtonSelected("button2") ? "white" : "",
+          background: isButtonSelected("Evde halı temizliği yapılsın")
+            ? "green"
+            : "",
+          color: isButtonSelected("Evde halı temizliği yapılsın")
+            ? "white"
+            : "",
         }}
-        onClick={() => handleButtonClick("button2")}
+        onClick={() => {
+          handleButtonClick("Evde halı temizliği yapılsın");
+        }}
       >
         Evde halı temizligi yapılsın
       </Button>
@@ -43,10 +61,14 @@ export default function Tab1() {
       <Button
         id="mainbutton2"
         style={{
-          background: isButtonSelected("button3") ? "green" : "",
-          color: isButtonSelected("button3") ? "white" : "",
+          background: isButtonSelected("Ofiste halı temizliği yapılsın")
+            ? "green"
+            : "",
+          color: isButtonSelected("Ofiste halı temizliği yapılsın")
+            ? "white"
+            : "",
         }}
-        onClick={() => handleButtonClick("button3")}
+        onClick={() => handleButtonClick("Ofiste halı temizliği yapılsın")}
       >
         Ofiste halı temizligi yapılsın
       </Button>
